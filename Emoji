@@ -1,0 +1,23 @@
+import cv2 as cv
+import numpy as np
+
+blank_image = np.zeros((600,400,3), dtype='uint8')
+blank_image[:] = (218,168,255)
+blank_image = cv.circle(blank_image, (200,150), 130, (120,250,10),thickness=cv.FILLED ) # 1st emoji
+blank_image = cv.circle(blank_image, (150,120), 20, (0,0,0), thickness=cv.FILLED ) # 1st eye emoji
+blank_image = cv.circle(blank_image, (260,120), 20, (0,0,0), thickness=cv.FILLED ) # second eye emoji
+blank_image = cv.ellipse(blank_image, (200,200), (55, 33), 0, 180, 360, (0,0,0), thickness=6 ) #  mouth emoji
+
+
+blank_image = cv.circle(blank_image, (200,450), 130, (0,255,25), thickness=cv.FILLED ) # 2nd emoji
+blank_image = cv.circle(blank_image, (140,410), 20, (0,0,0), thickness=cv.FILLED ) # 1st eye emoji
+blank_image = cv.circle(blank_image, (260,410), 20, (0,0,0), thickness=cv.FILLED ) # second eye emoji
+blank_image = cv.line(blank_image, (150,500), (250, 500), (0,0,0), thickness=8 ) # second eye emoji
+
+
+blank_image = cv.putText(blank_image, 'Sad', (10,30), cv.FONT_HERSHEY_SCRIPT_COMPLEX, 1, (0,0,0), thickness=2 )
+blank_image = cv.putText(blank_image, 'Nuetral', (10,330), cv.FONT_HERSHEY_SCRIPT_COMPLEX, 1, (0,0,0), thickness=2 )
+
+cv.imshow('Emojis', blank_image)
+cv.waitKey(0)
+
